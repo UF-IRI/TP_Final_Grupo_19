@@ -3,6 +3,7 @@
 #include "iri.cpp"
 
 namespace Casos_Base::tests {
+
 	TEST(Casos_Base, Test_Caso1) {
 		ASSERT_THAT(1, 1);
 	}
@@ -47,13 +48,24 @@ namespace Casos_Base::tests {
         delete[] lista;
     }
 
-    TEST(patients_irre, patients_re)
-    {
-        int n1, n2;
-        Patient patients_irre, patients_re;
-        Patient* lista1 = new Patient[n1];
-        Patient* lista2 = new Patient[n2];
-
-        EXPECT_STRNE(lista1[0], lista2[0]); // se fija que no tenga ninguno en comun
+    
+    TEST(Patient * lista) {
+            EXPECT_EQ(chequear.ID("45684810"), true);		
+            EXPECT_EQ(chequear.ID("45684810"), true);		
+            EXPECT_EQ(chequear.ID("456848+10"), false);		
+            EXPECT_EQ(chequear.ID("456/4810"), false);		
+            EXPECT_EQ(chequear.ID("45684"), false);		
+            EXPECT_EQ(chequear.ID("456848105"), false);
+      
     }
 
+    TEST(Date * lista) {
+        EXPECT_EQ(esBisiesto(2002), true);
+        EXPECT_EQ(esBisiesto(2008), true);
+        EXPECT_EQ(esBisiesto(1842), true);
+        EXPECT_EQ(esBisiesto(2026), true);
+        EXPECT_EQ(esBisiesto(1903), false);
+        EXPECT_EQ(esBisiesto(2007), false);
+        EXPECT_EQ(esBisiesto(180+), false);
+        EXPECT_EQ(esBisiesto(a023), false);
+    }

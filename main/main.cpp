@@ -5,10 +5,6 @@
 
 int main()
 {
-
-    std::cout << "Hello World TP_Final";
-
-
     Patient* aux_lista = nullptr;
     int n;
     Patient* irrecuperables;
